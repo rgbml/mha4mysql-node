@@ -192,6 +192,7 @@ sub check_manager_version {
 
 sub parse_mysql_version($) {
   my $str = shift;
+  ($str) =  $str =~ m/^[^-]*/g;
   my $result = sprintf( '%03d%03d%03d', $str =~ m/(\d+)/g );
   return $result;
 }
